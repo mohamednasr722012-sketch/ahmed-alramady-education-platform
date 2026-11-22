@@ -1,0 +1,6 @@
+{
+  "name": "أحمد الرمادي | ملك اللغة العربية",
+  "description": "منصة تعليمية عربية متكاملة للأستاذ أحمد الرمادي تضم الدروس المرئية، الامتحانات المؤقتة، لوحات الشرف، الشارات، وشهادات التفوق في اللغة العربية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

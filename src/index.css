@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "El Messiri", "IBM Plex Sans Arabic", serif;
+  --font-sans: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-obsidian: #05070C;
+  --color-royal-navy: #0A101E;
+  --color-surface-navy: #0F172A;
+  --color-surface-elevated: #141F38;
+  --color-gold-primary: #D4AF37;
+  --color-gold-light: #EED07A;
+  --color-gold-dark: #947016;
+}
+
+@layer base {
+  html,
+  body {
+    direction: rtl;
+    font-family: var(--font-sans);
+    background-color: #05070C;
+    color: #F8FAFC;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (max-width: 640px) {
+    input:not([type='checkbox']):not([type='radio']),
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid rgba(212, 175, 55, 0.75);
+    outline-offset: 2px;
+  }
+}
+
+/* Royal Architectural Surfaces & Atmosphere */
+.bg-royal-atmosphere {
+  background-color: #05070C;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 20% 0%, rgba(212, 175, 55, 0.10), transparent 65%),
+    radial-gradient(ellipse 55% 45% at 88% 8%, rgba(20, 31, 56, 0.65), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(15, 23, 42, 0.45), transparent 70%);
+}
+
+.bg-grid-hairline {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Subtle Islamic Geometric Khatam Lattice (Pure Architectural Linework) */
+.bg-arabesque-lattice {
+  background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-opacity='0.065' stroke-width='0.8'%3E%3Cpolygon points='36,4 45,27 68,36 45,45 36,68 27,45 4,36 27,27'/%3E%3Crect x='17' y='17' width='38' height='38' transform='rotate(45 36 36)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 72px 72px;
+}
+
+.surface-card {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.88) 0%, rgba(10, 16, 30, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 14px 36px -18px rgba(0, 0, 0, 0.65);
+}
+
+.surface-card-gold {
+  background: linear-gradient(180deg, rgba(16, 24, 44, 0.94) 0%, rgba(10, 16, 30, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  box-shadow:
+    inset 0 1px 0 rgba(238, 208, 122, 0.14),
+    0 18px 44px -20px rgba(0, 0, 0, 0.72);
+}
+
+.btn-gold-royal {
+  background: linear-gradient(135deg, #EED07A 0%, #D4AF37 52%, #B89122 100%);
+  color: #05070C;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 220, 0.45),
+    0 10px 26px -10px rgba(212, 175, 55, 0.45);
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), filter 160ms ease, box-shadow 160ms ease;
+}
+
+.btn-gold-royal:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 220, 0.6),
+    0 14px 30px -10px rgba(212, 175, 55, 0.55);
+}
+
+.btn-gold-royal:active:not(:disabled) {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-royal-outline {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  color: #F8FAFC;
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms ease, background-color 160ms ease;
+}
+
+.btn-royal-outline:hover:not(:disabled) {
+  background: rgba(20, 31, 56, 0.92);
+  border-color: rgba(238, 208, 122, 0.58);
+  transform: translateY(-1px);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F6E29C 0%, #D4AF37 55%, #B89122 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Compositor-only smooth shimmer for loading skeletons */
+@keyframes skeletonSweep {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: #0F172A;
+}
+
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.08) 50%,
+    transparent 100%
+  );
+  animation: skeletonSweep 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom subtle gold scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.28);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.52);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
